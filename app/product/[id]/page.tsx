@@ -122,8 +122,11 @@ export default async function ProductRoute({
                     <Link href="https://www.google.co.in/maps/search/${}" target="_blank">Open on the map</Link>
                 </Button>
                 <Separator className="my-7" />
-                <h3 className="font-medium">Penalty(if due date Exceeded):</h3>
-                <h3 className="font-medium">50% extra of the original rent</h3>
+                <h3 className="font-medium">Deposit (In case of damage or late return):</h3>
+                <h3 className="font-medium">50% extra of  ₹{data?.price}</h3>
+                <Button className="w-full" asChild>
+                    <Link href="/feedback" >Raise a complaint</Link>
+                </Button>
         </div>
 
         <form action={createReservation}>

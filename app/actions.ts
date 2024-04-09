@@ -152,3 +152,7 @@ export async function createReservation(formData: FormData) {
   }
 
 
+export async function createFeedback(formData:FormData)
+{
+  return redirect("/");
+}

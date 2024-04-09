@@ -53,8 +53,13 @@ export async function UserNav()
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <LogoutLink className="w-full">Logout</LogoutLink>
+              <Link href="/aadhar"  className="w-full">
+                Auth aadhar 
+              </Link>
             </DropdownMenuItem>
+            <DropdownMenuItem>
+              <LogoutLink className="w-full">Logout</LogoutLink>
+            </DropdownMenuItem>                                         
             </>
               ):(
                 <>  
