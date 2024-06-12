@@ -58,13 +58,15 @@ export default async function ProductRoute({
   params: { id: string };
 }) {
   const data = await getData(params.id);
+  const address = `${data?.building || ''} ${data?.city || ''} ${data?.State || ''} ${data?.pincode || ''}`.trim();
+
   
   
    
   const { getUser } = getKindeServerSession();
   const user = await getUser();
   return (
-    <div className="w-[75%] mx-auto mt-10 mb-12">
+    <div className="w-[50%] mx-auto mt-10 mb-12">
       <div className="relative h-[550px]">
         <Image
           alt="Image of Product"
@@ -119,7 +121,7 @@ export default async function ProductRoute({
           <p className="text-muted-foreground">{data?.building} {data?.city} {data?.pincode} </p>
           <p className="text-muted-foreground mb-4">{data?.State} {data?.Country}</p>
           <Button className="w-full" asChild>
-                    <Link href="https://www.google.co.in/maps/search/${}" target="_blank">Open on the map</Link>
+                    <Link href={`https://www.google.co.in/maps/search/?api=1&query=${address}`} target="_blank">Open on the map</Link>
                 </Button>
                 <Separator className="my-7" />
                 <h3 className="font-medium">Deposit (In case of damage or late return):</h3>
